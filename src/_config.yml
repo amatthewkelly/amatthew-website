@@ -1,0 +1,20 @@
+name: 'Aaron Kelly'
+description: 'Insert your website description here'
+author: 'Aaron Kelly'
+author_email: 'aaron@gmail.com'
+author_twitter: '@aaron'
+url: 'https://amatthew.dev'
+timezone: 'America/Chicago'
+strict_front_matter: true
+production: false
+permalink: /:year/:title/
+excerpt_separator: <!--more-->
+collections:
+  poems:
+    output: true
+sass:
+  sass_dir: '_sass'
+  style: 'compressed'
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap

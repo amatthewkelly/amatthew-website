@@ -1,0 +1,6 @@
+<footer>
+  <!-- include stats if prod -->
+  {% if {{site.production}} == true %}
+    {% include tracker.html %}
+  {% endif %}
+</footer>

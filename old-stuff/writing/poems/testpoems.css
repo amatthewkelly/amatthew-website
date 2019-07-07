@@ -1,0 +1,57 @@
+body {
+	background-color: powderblue;
+}
+h1{
+	color: black;
+	text-align:center;
+}
+p {
+	color: black;
+	text-align:justify;
+}
+.group {
+	display: flex;
+	height: 100vh;
+	align-items: center;
+	justify-content: center:
+}
+img {
+	max-width:100%;
+	height:auto;
+}
+.left {
+	float: left;
+	width: 70%;
+	height: 60%;
+	overflow: scroll;
+}
+.left img {
+	width: 100%;
+	height: auto;
+}
+
+.right {
+	float: right;
+	width: 30%;
+	padding-left: 5px;
+}
+
+
+.group:after {
+	content:"";
+	display: table;
+	clear: both;
+}
+
+/* On screens that are 800px wide or less, make the left/right stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+	.left, 
+	.right {
+		float: none;
+		width: auto;
+	}
+	.group {
+		display: flex;
+		flex-direction: column;
+	}
+}

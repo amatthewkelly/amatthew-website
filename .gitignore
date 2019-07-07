@@ -1,6 +1,5 @@
 ### Jekyll ###
 src/_site/
-!src/_site/.gitkeep
 src/.sass-cache/
 src/.jekyll-cache/
 src.jekyll-metadata

@@ -17,6 +17,7 @@ pipeline {
             steps {
                 sh '''
                     cd ${SITE_DIR}
+                    mkdir ./_site
                     chown -R jekyll ./_site
                     bundle install
                     bundle exec jekyll build --config=_config.yml,_config_prod.yml

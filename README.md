@@ -1,3 +1,2 @@
-Aaron Kelly's Website
-
-Created with Jekyll! And George.
+# personal-site
+for my personal website. a work in progress. 

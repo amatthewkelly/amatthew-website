@@ -86,4 +86,10 @@ img {
 		display: flex;
 		flex-direction: column-reverse;
 	}
+	.right,
+	.tfright,
+	.tfleft {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
 }

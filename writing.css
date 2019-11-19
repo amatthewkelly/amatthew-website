@@ -53,12 +53,11 @@ img {
 }
 
 .right {
-	float: right;
+	/*float: right;*/
 	padding-left: 5px;
 	justify-content: center;
 	align-items: center;
 	height: 60%;
-	width: 30%;
 	text-align: center;
 }
 

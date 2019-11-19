@@ -23,12 +23,12 @@ img {
 .tfleft {
 	float: left;
 	width: auto;
-	padding-right: 50px;
+	padding-right: 15px;
 }
 .tfright {
 	float: right;
 	width: auto;
-	padding-left: 50px;
+	padding-left: 15px;
 }
 .group {
 	display: flex;
@@ -42,8 +42,8 @@ img {
 	width: 70%;
 	height: 500px;
 	justify-content: center;
-	/*overflow: scroll;
-	padding-top: 15%;*/
+	overflow: scroll;
+	/*padding-top: 15%;*/
 }
 
 .left img {
@@ -66,11 +66,6 @@ img {
 	height:auto;
 }
 
-.scrolltext {
-	overflow: scroll;
-	height: 80%;
-	align-items: center;
-}
 .group:after {
 	content:"";
 	display: table;
@@ -84,27 +79,26 @@ img {
 
 /* On screens that are 800px wide or less, make the left/right stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
-	.left,
-	.right {
-		float: none;
-		width: auto;
-	}
 	.group {
 		display: flex;
 		flex-direction: column;
 	}
+	.left
+	.right {
+		float: none;
+		width: auto;
+	}
 }
 
+/* On screens that are 600px wide or less, make the left/right and tfleft/tfright stack on top of each other instead of next to each other*/ 
 @media screen and (max-width: 600px) {
-	.tfwrapper{
+        .tfwrapper{
 		display: flex;
-		flex-direction: column;
+		flex-direction: column-reverse;
 	}
 	.tfleft,
 	.tfright {
 		float:none;
 		width:auto;
-		padding-left: 0px;
-		padding-right: 0px;
 	}
 }

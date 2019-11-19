@@ -2,7 +2,8 @@ body {
 	background-color: powderblue;
 }
 
-h1{
+h1,
+h2 {
 	color: black;
 	text-align:center;
 }
@@ -40,7 +41,7 @@ img {
 .left {
 	float: left;
 	width: 70%;
-	height: 500px;
+	height: 90%;
 	justify-content: center;
 	overflow: scroll;
 	/*padding-top: 15%;*/
@@ -61,11 +62,6 @@ img {
 	text-align: center;
 }
 
-.right img {
-	width:100%;
-	height:auto;
-}
-
 .group:after {
 	content:"";
 	display: table;
@@ -83,22 +79,12 @@ img {
 		display: flex;
 		flex-direction: column;
 	}
-	.left
-	.right {
-		float: none;
-		width: auto;
-	}
 }
 
-/* On screens that are 600px wide or less, make the left/right and tfleft/tfright stack on top of each other instead of next to each other*/ 
+/* On screens that are 600px wide or less, tfleft/tfright stack on top of each other instead of next to each other*/ 
 @media screen and (max-width: 600px) {
         .tfwrapper{
 		display: flex;
 		flex-direction: column-reverse;
-	}
-	.tfleft,
-	.tfright {
-		float:none;
-		width:auto;
 	}
 }

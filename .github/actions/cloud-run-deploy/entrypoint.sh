@@ -35,5 +35,5 @@ gcloud run deploy ${INPUT_SERVICENAME} \
   --platform managed \
   --allow-unauthenticated \
   --service-account ${INPUT_GCLOUDRUNTIMESERVICEACCOUNT} \
-  --region us-east1 \
+  --region us-central1 \
   --image gcr.io/${INPUT_GCLOUDPROJECTID}/${INPUT_SERVICENAME}:latest

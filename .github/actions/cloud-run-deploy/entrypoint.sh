@@ -16,6 +16,10 @@ sanitize "${INPUT_GCLOUDSERVICEACCOUNT}" "gcloudServiceAccount"
 sanitize "${INPUT_GCLOUDRUNTIMESERVICEACCOUNT}" "gcloudRuntimeServiceAccount"
 sanitize "${GCLOUD_AUTH}" "GCLOUD_AUTH"
 
+# Get version from timestamp
+# Format: YYYYMMDDHHMMSS
+PACKAGE_VERSION=$(date "+%Y%m%d%H%M%S")
+
 # Set project
 gcloud config set project ${INPUT_GCLOUDPROJECTID}
 
@@ -25,15 +29,15 @@ gcloud auth activate-service-account --key-file=./key.json
 rm ./key.json
 
 # Submit build
-gcloud builds submit --tag gcr.io/${INPUT_GCLOUDPROJECTID}/${INPUT_SERVICENAME}:latest
+gcloud builds submit --tag gcr.io/${INPUT_GCLOUDPROJECTID}/${INPUT_SERVICENAME}:${PACKAGE_VERSION}
 
 # Deploy
 gcloud run deploy ${INPUT_SERVICENAME} \
   --concurrency 20 \
-  --max-instances 1000 \
+  --max-instances 200 \
   --memory 128Mi \
   --platform managed \
   --allow-unauthenticated \
   --service-account ${INPUT_GCLOUDRUNTIMESERVICEACCOUNT} \
   --region us-central1 \
-  --image gcr.io/${INPUT_GCLOUDPROJECTID}/${INPUT_SERVICENAME}:latest
+  --image gcr.io/${INPUT_GCLOUDPROJECTID}/${INPUT_SERVICENAME}:${PACKAGE_VERSION}

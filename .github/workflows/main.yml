@@ -11,8 +11,8 @@ jobs:
       uses: georgemblack/actions/cloud-run-deploy@1.0.4
       with:
         serviceName: aaron-web
-        gcloudProjectId: ${{ secrets.GCLOUD_PROJECT_ID }}
-        gcloudRuntimeServiceAccount: ${{ secrets.GCLOUD_RUNTIME_SERVICE_ACCOUNT }}
+        projectId: ${{ secrets.GCLOUD_PROJECT_ID }}
+        runtimeServiceAccount: ${{ secrets.GCLOUD_RUNTIME_SERVICE_ACCOUNT }}
         cloudBuildBucket: artifacts.georgemb.appspot.com
         concurrency: 20
         maxInstances: 800

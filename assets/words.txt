@@ -21,3 +21,5 @@ exigencies
 mercurial
 lagniappe
 palliate
+insouciant
+loquacious
